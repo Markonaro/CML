@@ -12,11 +12,7 @@ function [theta] = normalEqn(X, y)
 
 % ---------------------- Sample Solution ----------------------
 
-t1 = transpose(X)*y;
-t2 = transpose(X)*X;
-disp(size(t1));
-disp(size(t2));
-theta = t1/t2;
+theta = pinv(transpose(X)*X)*transpose(X)*y;
 
 % -------------------------------------------------------------
 
